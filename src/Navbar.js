@@ -1,18 +1,23 @@
-import { link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import icon1 from "./pngegg.png";
 
-export const Navbar = () => {
+import Navbar from 'react-bootstrap/Navbar'
+
+export const Navbarr = () => {
     return (
 
-        <Navbar className="navbar">
+        <Navbar className="asdfg">
         <Container>
           <Navbar.Brand href="#home" className='logo'>
             <img src={icon1} alt='image' height="30px" width="40px"  />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link to="/">Home</Nav.Link>
-            <Nav.Link to="/Add">Add Items</Nav.Link>
-            <Nav.Link to="/profile">Profile</Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="/Add">Add Items</Link>
+            <Link to="/Profile">Profile</Link>
           </Nav>
         </Container>
       </Navbar>
