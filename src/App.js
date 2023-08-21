@@ -15,7 +15,7 @@ const addTask = () => {
 
 }
 
-export const handleChange = (event) => {
+const handleChange = (event) => {
   setNewTask(event.target.value);
 }
 
@@ -33,7 +33,7 @@ const deleteTask = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/add" element={<Add />} />
+            <Route path="/add" element={<Add  handleChange={handleChange} newTask={newTask} />} />
             <Route path="/edit" element={<Edit />} />
             <Route path="*" element={<h1> PAGE NOT FOUND</h1>} />
           </Routes>
