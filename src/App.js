@@ -1,11 +1,32 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from 'react';
 
 import { Home } from './pages/home';
 import { Add } from './pages/add';
 import { Edit } from './pages/edit';
 
-  function App() {
+function App() {
+
+const[tasks, setTasks] = useState([]);
+const[newTask, setNewTask] = useState("");
+
+const addTask = () => {
+
+}
+
+export const handleChange = (event) => {
+  setNewTask(event.target.value);
+}
+
+const editTask = () => {
+
+}
+
+const deleteTask = () => {
+
+}
+
     return (
       <div className="App">
       <>

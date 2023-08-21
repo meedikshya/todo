@@ -1,6 +1,10 @@
 import '../App.css';
 import { Navbarr } from '../Navbar';
 import { Footer } from './footer';
+import '../App.js';
+import { useState } from 'react';
+import handleChange from "../App";
+
 
 export const Add = () => {
     return (
