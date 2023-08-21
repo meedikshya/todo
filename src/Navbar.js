@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import icon1 from "./pngegg.png";
-
 import Navbar from 'react-bootstrap/Navbar'
 
 export const Navbarr = () => {
     return (
-
         <Navbar className="asdfg">
         <Container>
           <Navbar.Brand href="#home" className='logo'>
@@ -21,6 +18,5 @@ export const Navbarr = () => {
           </Nav>
         </Container>
       </Navbar>
-
     )
 }
