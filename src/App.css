@@ -84,11 +84,12 @@ height: 31px;
 
 .title{
   color: #699aad;
+  text-decoration: none;
 }
 
 .inputHome {
   width: 300px;
-  margin-left: 300px;
+  margin-left: 250px;
 }
 
 
@@ -105,3 +106,59 @@ height: 31px;
      background-origin: border-box;
     box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
   }
+
+
+.list {
+  margin-left: 80px;
+  border: 1px solid rgb(241, 245, 246);
+  width: 700px;
+  padding: 10px;
+  border-radius: 30px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.listItems {
+  list-style: none;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 30px;
+  justify-content: flex-start;
+}
+
+.listItems, li {
+padding: 10px;
+font-size: 20px;
+margin-left: -180px;
+}
+
+label {
+  margin-left: 0px;
+}
+
+.buttonsED{
+  margin-left: 200px;
+  margin-right: -300px;
+}
+
+
+.labels{
+  width: 20%;
+}
+
+.navlink{
+  text-decoration: none;
+  color: black;
+}
+
+a:active{
+  color: gray;
+}
+
+
+
+
+
+
+

@@ -15,9 +15,9 @@ export const Navbarr = () => {
             <img src={icon1} alt='image' height="30px" width="40px"  />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="/Add">Add Items</Link>
-            <Link to="/Profile">Profile</Link>
+            <Link to="/" className="navlink">Home</Link>
+            <Link to="/Add" className="navlink">Add Items</Link>
+            <Link to="/Profile" className="navlink">Profile</Link>
           </Nav>
         </Container>
       </Navbar>
