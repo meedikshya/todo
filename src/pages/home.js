@@ -1,10 +1,6 @@
 import img from "../bodyimg.svg";
-
 import { Footer } from './footer';
-
 import { Navbarr } from '../Navbar';
-
-
 
 export const Home = () => {
     return(
@@ -30,14 +26,74 @@ export const Home = () => {
 <br/>
   <br/>
 
-            <div className='list'>
-            <ul>
-              <li>List 1 Edit/ Delete</li>
-              <li>List 2 Edit/ Delete</li>
+           <div className='list'>
 
-            </ul>
+           
+          <ul className="listItems">
+
+            <li>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+            
+            <label for="vehicle1" className="labels">Do Assignment</label>
+
+            <span className="buttonsED">
+            
+            <button type="button" class="btn btn-primary">Edit</button>
+            &nbsp; &nbsp;
+
+            <button type="button" class="btn btn-danger">Delete</button>
+            <br />
+            </span>
+
+
+            
+            </li>
+            <li>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+
+            <label for="vehicle1" className="labels">Do Laundry</label>
+
+            <span className="buttonsED">
+            <button type="button" class="btn btn-primary">Edit</button>
+            &nbsp; &nbsp;
+            <button type="button" class="btn btn-danger">Delete</button>
+            
+            <br />
+            </span>
+            </li>
+            <li>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+
+            <label for="vehicle1" className="labels">Cook Dinner</label>
+
+            <span className="buttonsED">
+            <button type="button"  class="btn btn-primary">Edit</button>
+            &nbsp; &nbsp;
+
+            <button type="button" class="btn btn-danger">Delete</button>
+          
+            <br />
+            </span>
+            </li>
+            <li>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+
+            <label for="vehicle1" className="labels">Read Books</label>
+            <span className="buttonsED">
+            <button type="button" class="btn btn-primary">Edit</button>
+            &nbsp; &nbsp;
+
+            <button type="button" class="btn btn-danger">Delete</button>
+            <br />
+            </span>
+            </li>
+
+          </ul>
+
+
+
             </div>
-</div>
+            </div>
 </div>
 
 <Footer />
