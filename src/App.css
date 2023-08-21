@@ -156,6 +156,20 @@ a:active{
   color: gray;
 }
 
+.addItems{
+  margin-top: -50px;
+}
+
+.containerEdit{
+  border: 1px solid rgb(241, 245, 246);
+  margin-top: 100px;
+  margin-left: 400px;
+  width: 700px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 30px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
 
 
 
