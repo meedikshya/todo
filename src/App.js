@@ -10,6 +10,7 @@ function App() {
 
 const[listTasks, setListTasks] = useState([]);
 const[newTask, setNewTask] = useState("");
+const[editedTask,setEditedTask] = useState(null);
 
 const addTask = () => {
   const task = {
@@ -23,8 +24,21 @@ const handleChange = (event) => {
   setNewTask(event.target.value);
 }
 
-const editTask = () => {
-  
+const editTask = (editedTask) => {
+  const updatedTask = listTasks.map((task) =>
+   (task.id === editedTask.id) ? {...task, taskName: editedTask.taskName} : task
+  );
+  setEditedTask(updatedTask);
+  setEditedTask(null);
+}
+
+
+
+
+const handleSave = (event) => {
+  if(editedTask) {
+    editTask(editedTask);
+  }
 }
 
 const deleteTask = (taskId) => {
@@ -38,7 +52,7 @@ const deleteTask = (taskId) => {
           <Routes>
             <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} />} />
             <Route path="/add" element={<Add  handleChange={handleChange} addTask={addTask} listTasks={listTasks} />} />
-            <Route path="/edit" element={<Edit />} />
+            <Route path="/edit/:taskId" element={<Edit editTask={editTask} handleSave={handleSave} listTasks={listTasks} addTask={addTask}  />} />
             <Route path="*" element={<h1> PAGE NOT FOUND</h1>} />
           </Routes>
         </Router>
