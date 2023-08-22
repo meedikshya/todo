@@ -2,16 +2,15 @@ import React from 'react';
 import img from "../bodyimg.svg";
 import { Footer } from './footer';
 import { Navbarr } from '../Navbar';
-import { Edit } from "./edit";
 import { useNavigate } from "react-router-dom";
 
 export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
   const navigate = useNavigate();
-
-  const routeChange = () => {
-    let path = "/edit";
+  const routeChange = (task) => {
+  let path = `/edit/${task.id}`;
     navigate(path);
   };
+
 
   return (
     <div className="homePage">
@@ -32,14 +31,14 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
           </form>
           <br />
           <br />
-
           <ul className="list">
             {listTasks.map((task) => (
               <li key={task.id} className="listItems">
-                <input className="form-check-input" type="checkbox" value="" id={`flexCheck${task.id}`} />
+                <input className="form-check-input" type="checkbox" value="" id="flexCheck" />
                 {task.taskName}
                 <span className="buttonsED">
-                  <button type="button" className="btn btn-primary" onClick={routeChange}>Edit</button>
+                
+                  <button type="button" className="btn btn-primary" onClick={() => routeChange(task)}>Edit</button>
                   &nbsp; &nbsp;
                   <button onClick={() => deleteTask(task.id)} type="button" className="btn btn-danger">Delete</button>
                   <br />
@@ -47,10 +46,12 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
               </li>
             ))}
           </ul>
+          
         </div>
       </div>
       <Footer />
-
     </div>
+
+
   );
 };
