@@ -97,8 +97,7 @@ height: 31px;
   position:absolute;
   height: 40px;
   width: 90px;
-  margin-top: -45px;
-  margin-left: 160px;
+  margin-left: 410px;
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     border: none;
     color: #fff;
@@ -125,6 +124,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
   font-size: 20px;
   font-size: 30px;
   justify-content: flex-start;
+  
 }
 
 .listItems, li {

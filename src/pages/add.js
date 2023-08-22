@@ -6,7 +6,7 @@ import { useState } from 'react';
 import handleChange from "../App";
 
 
-export const Add = ({handleChange, newTask}) => {
+export const Add = ({handleChange, addTask, listTasks}) => {
     return (
       <div className='addPage'>
         <Navbarr />
@@ -19,12 +19,14 @@ export const Add = ({handleChange, newTask}) => {
                 <input onChange={handleChange} type="text" id="form3" class="form-control form-control-lg" />
                 <label class="form-label" for="form3" style={{"margin-top":"30px"}}>What do you need to do today?</label>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
-              <div>
-              </div>
+              <button onClick={addTask} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
             </form>
           </div>
-{newTask}
+          <div>
+             {listTasks.map((task) => {
+              return( <h1 key={task.id}>{task.id}{task.taskName}</h1>)
+             })}
+             </div>
 
         </div>
 </section>
