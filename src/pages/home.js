@@ -3,13 +3,13 @@ import img from "../bodyimg.svg";
 import { Footer } from './footer';
 import { Navbarr } from '../Navbar';
 import { Edit } from "./edit";
-import { useNavigate } from "react-router-dom"; // Make sure you're importing from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
   const navigate = useNavigate();
 
   const routeChange = () => {
-    let path = "/edit"; // Correct the path to use the absolute path or relative path as per your routing setup
+    let path = "/edit";
     navigate(path);
   };
 

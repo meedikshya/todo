@@ -2,9 +2,6 @@ import '../App.css';
 import { Navbarr } from '../Navbar';
 import { Footer } from './footer';
 import '../App.js';
-import { useState } from 'react';
-import handleChange from "../App";
-
 
 export const Add = ({handleChange, addTask, listTasks}) => {
     return (
@@ -27,7 +24,6 @@ export const Add = ({handleChange, addTask, listTasks}) => {
               return( <h1 key={task.id}>{task.id}{task.taskName}</h1>)
              })}
              </div>
-
         </div>
 </section>
 <Footer />
