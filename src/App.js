@@ -24,14 +24,13 @@ const handleChange = (event) => {
 }
 
 const editTask = () => {
-
+  
 }
 
 const deleteTask = (taskId) => {
   const updateTask = listTasks.filter((task) => taskId !== task.id); 
   setListTasks(updateTask);
 }
-
     return (
       <div className="App">
       <>
@@ -46,7 +45,4 @@ const deleteTask = (taskId) => {
         </>
         </div>
     )};
-
-
-
 export default App;
