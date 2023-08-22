@@ -8,11 +8,15 @@ import { Edit } from './pages/edit';
 
 function App() {
 
-const[tasks, setTasks] = useState([]);
+const[listTasks, setListTasks] = useState([]);
 const[newTask, setNewTask] = useState("");
 
 const addTask = () => {
-
+  const task = {
+    id: listTasks.length === 0 ? 1 : listTasks[listTasks.length-1].id + 1 ,
+    taskName: newTask
+  }
+  setListTasks([...listTasks,task]);
 }
 
 const handleChange = (event) => {
@@ -23,8 +27,9 @@ const editTask = () => {
 
 }
 
-const deleteTask = () => {
-
+const deleteTask = (taskId) => {
+  const updateTask = listTasks.filter((task) => taskId !== task.id); 
+  setListTasks(updateTask);
 }
 
     return (
@@ -32,8 +37,8 @@ const deleteTask = () => {
       <>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/add" element={<Add  handleChange={handleChange} newTask={newTask} />} />
+            <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} />} />
+            <Route path="/add" element={<Add  handleChange={handleChange} addTask={addTask} listTasks={listTasks} />} />
             <Route path="/edit" element={<Edit />} />
             <Route path="*" element={<h1> PAGE NOT FOUND</h1>} />
           </Routes>
