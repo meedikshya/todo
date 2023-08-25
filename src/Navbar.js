@@ -14,7 +14,6 @@ export const Navbarr = () => {
           <Nav className="me-auto">
             <Link to="/" className="navlink">Home</Link>
             <Link to="/Add" className="navlink">Add Items</Link>
-            <Link to="/Profile" className="navlink">Profile</Link>
           </Nav>
         </Container>
       </Navbar>

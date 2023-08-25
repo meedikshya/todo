@@ -6,18 +6,14 @@ export const Footer = () => {
       <Card className="text-center">
       <Card.Header></Card.Header>
       <Card.Body>
-        <Card.Title>Don't forget to Sign Up.</Card.Title>
         <Card.Text>
-        Get Notified with our latest update.
         </Card.Text>
-        <input type='email'/>
-        <input className='button' type='button' value="Subscribe" />
         <section class="">
         <div class="container text-center text-md-start mt-5">
        
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-        <h6 class="text-uppercase fw-bold mb-4">
+        <h6 class="text-uppercase fw-bold mb-4" style={{"margin-left":"3px"}}>
             Quick Links
           </h6>
           <p>
@@ -31,7 +27,7 @@ export const Footer = () => {
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
         <h6 class="text-uppercase fw-bold mb-4">Contact US</h6>
-          <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+          <p><i class="fas fa-home me-3 text-secondary"></i> New York, US</p>
           <p>
             <i class="fas fa-envelope me-3 text-secondary"></i>
             info@example.com
@@ -39,7 +35,7 @@ export const Footer = () => {
           <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
           </div>
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-        <h6 class="text-uppercase fw-bold mb-4">
+        <h6 class="text-uppercase fw-bold mb-4" style={{"margin-left":"60px"}}>
             Follow US
           </h6>
           <div class="container pt-4">
@@ -81,8 +77,8 @@ export const Footer = () => {
       </Card.Body>
       <Card.Footer className="text-muted">
       <div class="text-center text-dark p-3">
-    © 2020 Copyright:
-    <a class="text-dark" href=""> jdiwjdwiqss@.com </a>
+    © 2023 Copyright:
+    <a class="text-dark" href=""> ticktock@.com </a>
   </div>
       </Card.Footer>
     </Card>
