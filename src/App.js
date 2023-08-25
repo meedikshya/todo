@@ -33,13 +33,14 @@ const editTask = (editedTask) => {
 }
 
 
+const updateTaskName = (taskId, newTaskName) => {
+  const updatedTasks = listTasks.map((task) =>
+    task.id === taskId ? { ...task, taskName: newTaskName } : task
+  );
+  setListTasks(updatedTasks);
+};
 
 
-const handleSave = (event) => {
-  if(editedTask) {
-    editTask(editedTask);
-  }
-}
 
 const deleteTask = (taskId) => {
   const updateTask = listTasks.filter((task) => taskId !== task.id); 
@@ -50,9 +51,9 @@ const deleteTask = (taskId) => {
       <>
         <Router>
           <Routes>
-            <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} />} />
+            <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} updateTaskName={updateTaskName} />} />
             <Route path="/add" element={<Add  handleChange={handleChange} addTask={addTask} listTasks={listTasks} />} />
-            <Route path="/edit/:taskId" element={<Edit editTask={editTask} handleSave={handleSave} listTasks={listTasks} addTask={addTask}  />} />
+            <Route path="/edit/:taskId" element={<Edit editTask={editTask} editedTask={editedTask}  listTasks={listTasks} updateTaskName={updateTaskName} />} />
             <Route path="*" element={<h1> PAGE NOT FOUND</h1>} />
           </Routes>
         </Router>

@@ -4,13 +4,12 @@ import { Footer } from './footer';
 import { Navbarr } from '../Navbar';
 import { useNavigate } from "react-router-dom";
 
-export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
+export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskName }) => {
   const navigate = useNavigate();
   const routeChange = (task) => {
   let path = `/edit/${task.id}`;
-    navigate(path);
+    navigate(path, { state: {task} });
   };
-
 
   return (
     <div className="homePage">
@@ -24,8 +23,8 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
             <u className='title'>Task-List</u>
           </p>
           <form className="d-flex justify-content-center align-items-center mb-4 inputHome">
-            <div className="form-outline flex-fill">
               <input onChange={handleChange} type="text" id="form3" className="form-control form-control-lg" placeholder='New Task...' />
+            <div className="form-outline flex-fill">
             </div>
             <input onClick={addTask} className='addButton' type='button' value="ADD" />
           </form>
@@ -34,11 +33,17 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
           <ul className="list">
             {listTasks.map((task) => (
               <li key={task.id} className="listItems">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheck" />
+              <span className='listItem'>
+                <input className="form-check-input" type="checkbox" value="" id="flexCheck"  />
                 {task.taskName}
+                </span>
                 <span className="buttonsED">
-                
-                  <button type="button" className="btn btn-primary" onClick={() => routeChange(task)}>Edit</button>
+                  <button type="button" className="btn btn-primary" onClick={() => {
+                  routeChange(task);
+                  updateTaskName(task);
+                  }}>
+                  Edit
+                  </button>
                   &nbsp; &nbsp;
                   <button onClick={() => deleteTask(task.id)} type="button" className="btn btn-danger">Delete</button>
                   <br />
@@ -46,7 +51,6 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask }) => {
               </li>
             ))}
           </ul>
-          
         </div>
       </div>
       <Footer />

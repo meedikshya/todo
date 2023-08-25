@@ -43,7 +43,7 @@
 }
 
 .me-auto{
-  margin-left: 130vh;
+  margin-left: 145vh;
   text-indent: 30px;
 }
 
@@ -51,9 +51,21 @@
   margin-left: -50px;
 }
 
+.text-reset{
+  text-decoration: none;
+}
+
+.text-uppercase{
+margin-left: 20px;
+}
+
+.text-dark{
+  text-decoration: none;
+}
+
 
 .button{
-height: 31px;
+  height: 31px;
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
   border: none;
   color: #fff;
@@ -98,22 +110,22 @@ height: 31px;
   height: 40px;
   width: 90px;
   margin-left: 410px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-    border: none;
-    color: #fff;
-    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
-     background-origin: border-box;
-    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
   }
 
 
 .list {
   margin-left: 80px;
-  border: 1px solid rgb(241, 245, 246);
+  border: 0px solid rgb(241, 245, 246);
   width: 700px;
   padding: 10px;
   border-radius: 30px;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 
@@ -123,14 +135,16 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 
   font-family: sans-serif;
   font-size: 20px;
   font-size: 30px;
-  justify-content: flex-start;
-  
 }
 
 .listItems, li {
 padding: 10px;
 font-size: 20px;
 margin-left: -180px;
+}
+
+.listItem{
+  justify-content:flex-start ;
 }
 
 label {
@@ -140,6 +154,7 @@ label {
 .buttonsED{
   margin-left: 200px;
   margin-right: -300px;
+  width: 200px;
 }
 
 
@@ -168,7 +183,22 @@ a:active{
   height: 300px;
   padding: 10px;
   border-radius: 30px;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.addedItem{
+  padding: 10px;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  width: 600px;
+  margin-left: 450px;
+}
+
+.addedId, .addedList{
+  margin-right: 20px;
+  font-size: 20px;
+  font-family: sans-serif;
 }
 
 

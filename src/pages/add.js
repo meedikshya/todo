@@ -10,7 +10,7 @@ export const Add = ({handleChange, addTask, listTasks}) => {
 <section class="vh-100">
 <div className='addItems'>
           <div class="card-body p-5" style={{"margin-top":"50px"}}>
-            <h6 class="mb-3">Awesome Todo List</h6>
+            <h6 class="mb-3"></h6>
             <form class="d-flex justify-content-center align-items-center mb-4">
               <div class="form-outline flex-fill">
                 <input onChange={handleChange} type="text" id="form3" class="form-control form-control-lg" />
@@ -19,9 +19,12 @@ export const Add = ({handleChange, addTask, listTasks}) => {
               <button onClick={addTask} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
             </form>
           </div>
-          <div>
+          <div className='addedItem'>
              {listTasks.map((task) => {
-              return( <h1 key={task.id}>{task.id}{task.taskName}</h1>)
+              return( <h1 key={task.id}>
+             <span className='addedId'>{task.id}</span>
+              <span className='addedList'>{task.taskName}</span>
+              </h1>)
              })}
              </div>
         </div>
