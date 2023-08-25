@@ -3,6 +3,7 @@ import img from "../bodyimg.svg";
 import { Footer } from './footer';
 import { Navbarr } from '../Navbar';
 import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskName }) => {
   const navigate = useNavigate();
@@ -10,6 +11,12 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
   let path = `/edit/${task.id}`;
     navigate(path, { state: {task} });
   };
+
+  const [checked, setChecked] = useState(false);
+
+  const styles = { textDecorationLine: checked ? "line-through" : "none" };
+
+  const toggle = () => setChecked(!checked);
 
   return (
     <div className="homePage">
@@ -34,8 +41,10 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
             {listTasks.map((task) => (
               <li key={task.id} className="listItems">
               <span className='listItem'>
-                <input className="form-check-input" type="checkbox" value="" id="flexCheck"  />
+                <input className="form-check-input" onChange={toggle} type="checkbox" value="" id="flexCheck"  checked={checked} />
+                <span style={styles}>
                 {task.taskName}
+                </span>
                 </span>
                 <span className="buttonsED">
                   <button type="button" className="btn btn-primary" onClick={() => {
