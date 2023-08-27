@@ -19,11 +19,13 @@ export const Add = ({handleChange, addTask, listTasks}) => {
               <button onClick={addTask} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
             </form>
           </div>
-          <div className='addedItem'>
+          <div className='addedItem' >
              {listTasks.map((task) => {
               return( <h1 key={task.id}>
+              <span class="d-flex justify-content-center">
              <span className='addedId'>{task.id}</span>
               <span className='addedList'>{task.taskName}</span>
+              </span>
               </h1>)
              })}
              </div>

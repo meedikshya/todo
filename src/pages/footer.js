@@ -2,15 +2,11 @@ import Card from 'react-bootstrap/Card';
 export const Footer = () => {
     return (
         <div className="footerPage">
-<div className='footer'>
+          <div className='footer'>
       <Card className="text-center">
-      <Card.Header></Card.Header>
-      <Card.Body>
-        <Card.Text>
-        </Card.Text>
-        <section class="">
+      <Card.Body className='footerr'>
+        <section class="footerColor">
         <div class="container text-center text-md-start mt-5">
-       
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
         <h6 class="text-uppercase fw-bold mb-4" style={{"margin-left":"3px"}}>
@@ -75,7 +71,7 @@ export const Footer = () => {
     </div>
     </section>
       </Card.Body>
-      <Card.Footer className="text-muted">
+      <Card.Footer className="text-muted" class="cardFooter">
       <div class="text-center text-dark p-3">
     © 2023 Copyright:
     <a class="text-dark" href=""> ticktock@.com </a>
