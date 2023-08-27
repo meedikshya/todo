@@ -41,7 +41,6 @@ const updateTaskName = (taskId, newTaskName) => {
 };
 
 
-
 const deleteTask = (taskId) => {
   const updateTask = listTasks.filter((task) => taskId !== task.id); 
   setListTasks(updateTask);
@@ -51,7 +50,7 @@ const deleteTask = (taskId) => {
       <>
         <Router>
           <Routes>
-            <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} updateTaskName={updateTaskName} />} />
+            <Route path="/" element={<Home handleChange={handleChange} addTask={addTask} listTasks={listTasks} deleteTask={deleteTask} updateTaskName={updateTaskName} setListTasks={setListTasks} />} />
             <Route path="/add" element={<Add  handleChange={handleChange} addTask={addTask} listTasks={listTasks} />} />
             <Route path="/edit/:taskId" element={<Edit editTask={editTask} editedTask={editedTask}  listTasks={listTasks} updateTaskName={updateTaskName} />} />
             <Route path="*" element={<h1> PAGE NOT FOUND</h1>} />

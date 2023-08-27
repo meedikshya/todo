@@ -84,6 +84,13 @@ margin-left: 20px;
 .footer{
   margin-top:10vh;
 }
+.footerr{
+  background-color:#c6c6c6;
+}
+
+.cardFooter{
+  background-color: #e0e0e0;
+}
 
 .sectionI{
   width: 40%;
@@ -140,11 +147,6 @@ margin-left: 20px;
 .listItems, li {
 padding: 10px;
 font-size: 20px;
-margin-left: -180px;
-}
-
-.listItem{
-  justify-content:flex-start ;
 }
 
 label {
@@ -152,10 +154,10 @@ label {
 }
 
 .buttonsED{
-  margin-left: 200px;
-  margin-right: -300px;
   width: 200px;
-}
+  position: absolute;
+  margin-left: 430px;
+ }
 
 
 .labels{
