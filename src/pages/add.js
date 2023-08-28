@@ -2,8 +2,22 @@ import '../App.css';
 import { Navbarr } from '../Navbar';
 import { Footer } from './footer';
 import '../App.js';
+import { useRef } from 'react';
+
 
 export const Add = ({handleChange, addTask, listTasks}) => {
+
+  let ref = useRef();
+
+const addItem = () => {
+  const taskName = ref.current.value;
+if(taskName){
+  addTask(taskName);
+  ref.current.value = "";
+}
+};
+
+
     return (
       <div className='addPage'>
         <Navbarr />
@@ -13,10 +27,10 @@ export const Add = ({handleChange, addTask, listTasks}) => {
             <h6 class="mb-3"></h6>
             <form class="d-flex justify-content-center align-items-center mb-4">
               <div class="form-outline flex-fill">
-                <input onChange={handleChange} type="text" id="form3" class="form-control form-control-lg" />
+                <input onChange={handleChange} ref={ref} type="text" id="form3" class="form-control form-control-lg" />
                 <label class="form-label" for="form3" style={{"margin-top":"30px"}}>What do you need to do today?</label>
               </div>
-              <button onClick={addTask} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
+              <button onClick={addItem} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
             </form>
           </div>
           <div className='addedItem' >

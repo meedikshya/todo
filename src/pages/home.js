@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import img from "../bodyimg.svg";
 import { Footer } from './footer';
 import { Navbarr } from '../Navbar';
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 
 export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskName,setListTasks }) => {
   const navigate = useNavigate();
@@ -12,11 +11,22 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
     navigate(path, { state: {task} });
   };
 
+  let ref = useRef();
 
-  const [checked, setChecked] = useState(false);
-  const styles = { textDecorationLine: checked ? "line-through" : "none" };
-  
-  
+  const handleAdd = () => {
+    const taskName = ref.current.value;
+    if (taskName) {
+      addTask(taskName);
+      ref.current.value = "";
+    }
+  };
+
+  const confirmAndDelete = (taskId) => {
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      deleteTask(taskId);
+    }
+  };
+
   const toggle = (taskId) => {
     const updatedTasks = listTasks.map(task => {
       if (task.id === taskId) {
@@ -40,10 +50,10 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
           </p>
           <form className="d-flex justify-content-center align-items-center mb-4 inputHome">
 
-              <input onChange={handleChange} type="text" id="form3" className="form-control form-control-lg" placeholder='New Task...' />
+              <input onChange={handleChange} type="text" ref={ref}  id="form3" className="form-control form-control-lg" placeholder='New Task...' />
             <div className="form-outline flex-fill">
             </div>
-            <input onClick={addTask} className='addButton' type='button' value="ADD" />
+            <input onClick= {handleAdd} className='addButton' type='button' value="ADD"  />
           </form>
           <br />
           <br />
@@ -53,7 +63,7 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
               <span className='listItem' class="d-flex justify-content-start">
                 <input className="form-check-input" onChange={() => toggle(task.id)} type="checkbox" value=""  id={`flexCheck-${task.id}`}
                     checked={task.checked || false}/>
-                <span style={styles}>
+                <span style={{ textDecorationLine: task.checked ? "line-through" : "none" }}>
                 {task.taskName}
                 </span>
                 </span>
@@ -66,7 +76,7 @@ export const Home = ({ handleChange, addTask, listTasks, deleteTask, updateTaskN
                   Edit
                   </button>
                   &nbsp; &nbsp;
-                  <button onClick={() => deleteTask(task.id)} type="button" className="btn btn-danger">Delete</button>
+                  <button onClick={() => confirmAndDelete(task.id)} type="button" className="btn btn-danger">Delete</button>
                   <br />
                   </span>
                 </span>

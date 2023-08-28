@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from 'react';
+import { useState} from 'react';
+import { useEffect } from 'react';
 
 import { Home } from './pages/home';
 import { Add } from './pages/add';
@@ -12,12 +13,21 @@ const[listTasks, setListTasks] = useState([]);
 const[newTask, setNewTask] = useState("");
 const[editedTask,setEditedTask] = useState(null);
 
+useEffect(() => {
+  const storedItem = JSON.parse(localStorage.getItem("items"));
+  if(storedItem) {
+    setListTasks(storedItem);
+  }
+}, []) 
+
 const addTask = () => {
   const task = {
     id: listTasks.length === 0 ? 1 : listTasks[listTasks.length-1].id + 1 ,
     taskName: newTask
   }
   setListTasks([...listTasks,task]);
+  localStorage.setItem("items" , JSON.stringify([...listTasks,task]))
+  console.log(JSON.stringify([...listTasks,task]))
 }
 
 const handleChange = (event) => {
@@ -29,6 +39,7 @@ const editTask = (editedTask) => {
    (task.id === editedTask.id) ? {...task, taskName: editedTask.taskName} : task
   );
   setEditedTask(updatedTask);
+  localStorage.setItem("items" , JSON.stringify(updatedTask))
   setEditedTask(null);
 }
 
