@@ -2,7 +2,7 @@ import '../App.css';
 import { Navbarr } from '../Navbar';
 import { Footer } from './footer';
 import '../App.js';
-import { useRef } from 'react';
+import { useRef} from 'react';
 
 
 export const Add = ({handleChange, addTask, listTasks}) => {
@@ -12,11 +12,10 @@ export const Add = ({handleChange, addTask, listTasks}) => {
 const addItem = () => {
   const taskName = ref.current.value;
 if(taskName){
-  addTask(taskName);
+  addTask({taskName});
   ref.current.value = "";
 }
 };
-
 
     return (
       <div className='addPage'>
@@ -30,14 +29,15 @@ if(taskName){
                 <input onChange={handleChange} ref={ref} type="text" id="form3" class="form-control form-control-lg" />
                 <label class="form-label" for="form3" style={{"margin-top":"30px"}}>What do you need to do today?</label>
               </div>
-              <button onClick={addItem} type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
+              <button onClick={addItem} 
+              type="button" class="btn btn-primary btn-lg ms-2" style={{"margin-top":"-60px"}}>Add</button>
             </form>
           </div>
           <div className='addedItem' >
-             {listTasks.map((task) => {
+             {listTasks.map((task, index) => {
               return( <h1 key={task.id}>
               <span class="d-flex justify-content-center">
-             <span className='addedId'>{task.id}</span>
+             <span className='addedId'>{index + 1}</span>
               <span className='addedList'>{task.taskName}</span>
               </span>
               </h1>)
